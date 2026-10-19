@@ -1,0 +1,30 @@
+name: Update Brent price
+
+on:
+  schedule:
+    - cron: '17 6,18 * * *' # twice a day (UTC); FRED publishes with a short delay
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/update.mjs
+      - name: Commit if the price changed
+        run: |
+          if git diff --quiet -- brent.json 2>/dev/null && git ls-files --error-unmatch brent.json >/dev/null 2>&1; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brent.json
+          git commit -m "Brent price $(node -p "require('./brent.json').latest.date")"
+          git push
