@@ -4,30 +4,14 @@
  "source": "U.S. Energy Information Administration via FRED (DCOILBRENTEU), Federal Reserve Bank of St. Louis",
  "sourceUrl": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
  "latest": {
-  "date": "2026-10-14",
-  "price": 126.55
+  "date": "2026-10-20",
+  "price": 115.22
  },
  "previous": {
-  "date": "2026-10-13",
-  "price": 125.78
+  "date": "2026-10-19",
+  "price": 118.82
  },
  "history": [
-  [
-   "2026-07-22",
-   94.12
-  ],
-  [
-   "2026-07-23",
-   105.32
-  ],
-  [
-   "2026-07-24",
-   100.31
-  ],
-  [
-   "2026-07-27",
-   91.82
-  ],
   [
    "2026-07-28",
    85.51
@@ -251,6 +235,22 @@
   [
    "2026-10-14",
    126.55
+  ],
+  [
+   "2026-10-15",
+   126.35
+  ],
+  [
+   "2026-10-16",
+   119.33
+  ],
+  [
+   "2026-10-19",
+   118.82
+  ],
+  [
+   "2026-10-20",
+   115.22
   ]
  ]
 }
